@@ -12,5 +12,5 @@ class HandleRequests(http.server.BaseHTTPRequestHandler):
 if  __name__ == '__main__':
   # Start up the server to expose the metrics.
   start_http_server(5001)
-  server = http.server.HTTPServer(('localhost',5000), HandleRequests)
+  server = http.server.HTTPServer(('134.122.70.44',5000), HandleRequests)
   server.serve_forever()
