@@ -6,7 +6,7 @@ REQUEST_COUNT = Counter('app_request_counts', 'Total HTTP Request Count', ['pyth
 class HandleRequests(http.server.BaseHTTPRequestHandler):
   def do_GET(self):
     # REQUEST_COUNT.inc()
-    REQUEST_COUNT.labels('get_function', self.endpoint).inc()
+    REQUEST_COUNT.labels('get_function', self.path).inc()
     self.send_response(200)
     self.send_header('Content-Type', 'text/html')
     self.end_headers()
