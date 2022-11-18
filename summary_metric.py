@@ -8,7 +8,7 @@ class HandleRequests(http.server.BaseHTTPRequestHandler):
   def do_GET(self):
     startTime = time.time()
     self.send_response(200)
-    time.sleep(5)
+    time.sleep(1)
     self.send_header('Content-Type', 'text/html')
     self.end_headers()
     self.wfile.write(bytes("<html><head><title></title></head><body style='color:#333;margin-top:30px;'><center><h2>Welcome to Prometheus-Python application</center></h2></html>","utf-8"))
